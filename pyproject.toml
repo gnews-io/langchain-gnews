@@ -29,6 +29,7 @@ dependencies = [
 test = [
     "pytest>=8",
     "langchain-tests>=1.0",
+    "pytest-asyncio>=0.23",
 ]
 
 [project.urls]
@@ -43,3 +44,4 @@ packages = ["src/langchain_gnews"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
+asyncio_mode = "auto"
