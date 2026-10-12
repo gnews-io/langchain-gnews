@@ -35,6 +35,7 @@ test = [
 [project.urls]
 Homepage = "https://gnews.io"
 Documentation = "https://docs.gnews.io"
+Repository = "https://github.com/gnews-io/langchain-gnews"
 
 [tool.hatch.version]
 path = "src/langchain_gnews/__init__.py"
