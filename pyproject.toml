@@ -1,0 +1,45 @@
+[build-system]
+requires = ["hatchling>=1.27"]
+build-backend = "hatchling.build"
+
+[project]
+name = "langchain-gnews"
+dynamic = ["version"]
+description = "LangChain tools for the GNews API: top headlines by country and category, and news search over an archive since 2020."
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{ name = "GNews API", email = "contact@gnews.io" }]
+keywords = ["langchain", "gnews", "news", "news api", "agents", "tools"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Typing :: Typed",
+]
+dependencies = [
+    "langchain-core>=1.0,<2",
+    "gnews-io-python>=1.0,<2",
+]
+
+[project.optional-dependencies]
+test = [
+    "pytest>=8",
+    "langchain-tests>=1.0",
+]
+
+[project.urls]
+Homepage = "https://gnews.io"
+Documentation = "https://docs.gnews.io"
+
+[tool.hatch.version]
+path = "src/langchain_gnews/__init__.py"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/langchain_gnews"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
